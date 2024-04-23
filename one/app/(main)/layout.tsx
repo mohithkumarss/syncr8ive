@@ -8,7 +8,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
       </div>
       <main className="md:pl-[72px] h-full"> {children}</main>
     </div>
-  );
+  ); 
 };
 
 export default MainLayout;
