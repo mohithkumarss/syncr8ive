@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 const font = Poppins({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
             enableSystem={true}
             storageKey="syncr8ive-theme"
           >
+            <ModalProvider />
             {children}
           </ThemeProvider>
         </body>
