@@ -32,7 +32,7 @@ export const InviteModal = () => {
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
-    }, 1000);
+    }, 2000);
   };
 
   const onNew = async () => {
@@ -42,7 +42,7 @@ export const InviteModal = () => {
         `/api/servers/${server?.id}/invite-code`
       );
 
-      onOpen("invite", response.data);
+      onOpen("invite", { server: response.data });
     } catch (error) {
       console.error(error);
     } finally {
@@ -77,8 +77,8 @@ export const InviteModal = () => {
             </Button>
           </div>
           <Button
-            disabled={isLoading}
             onClick={onNew}
+            disabled={isLoading}
             variant="link"
             size="sm"
             className="text-xs text-zinc-500 mt-4"
